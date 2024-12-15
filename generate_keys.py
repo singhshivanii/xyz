@@ -1,4 +1,4 @@
-import pickle
+import json
 import streamlit_authenticator as stauth
 from pathlib import Path
 
@@ -33,14 +33,14 @@ credentials = {
     }
 }
 
-# Step 3: Define the path for the hashed_pw.pkl file
-file_path = Path(__file__).parent / "hashed_pw.pkl"  # Use .parent to get the current directory
+# Step 3: Define the path for the credentials JSON file
+file_path = Path(__file__).parent / "hashed_pw.json"  # Change the file extension to .json
 
 # Ensure that the directory exists
 file_path.parent.mkdir(parents=True, exist_ok=True)
 
-# Step 4: Write the credentials dictionary directly to the pickle file (without converting to JSON)
-with file_path.open("wb") as file:
-    pickle.dump(credentials, file)
+# Step 4: Write the credentials dictionary to a JSON file
+with file_path.open("w") as file:
+    json.dump(credentials, file, indent=4)
 
 print(f"Hashed passwords and user details saved to '{file_path}'.")
