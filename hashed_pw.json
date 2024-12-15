@@ -1,0 +1,12 @@
+{
+    "Prateek": {
+        "name": "Prateek Agarwal",
+        "password": "hashed_password_1",
+        "email": "prateek@example.com"
+    },
+    "Anubhav": {
+        "name": "Anubhav",
+        "password": "hashed_password_2",
+        "email": "anubhav@example.com"
+    }
+}
